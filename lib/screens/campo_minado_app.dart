@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import '../components/resultado_widget.dart';
 
 class CampoMinadoApp extends StatelessWidget {
 
-  
+  _reiniciar() {
+    print('reiniciar');
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return MaterialApp(
+      home: Scaffold(
+        appBar: ResultadoWidget(
+          venceu: false,
+          onReiniciar: _reiniciar, 
+        ),
+        body: Container(
+          child: Text('Tabuleiro'),
+        ),
+      ),
     );
   }
 
